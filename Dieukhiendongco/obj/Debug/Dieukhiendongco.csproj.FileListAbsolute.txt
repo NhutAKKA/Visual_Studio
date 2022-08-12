@@ -1,0 +1,10 @@
+D:\nhut\dldkbmt\Bai_Tieu_Luan\solfwaare\Dieukhiendongco\bin\Debug\Dieukhiendongco.exe.config
+D:\nhut\dldkbmt\Bai_Tieu_Luan\solfwaare\Dieukhiendongco\bin\Debug\Dieukhiendongco.exe
+D:\nhut\dldkbmt\Bai_Tieu_Luan\solfwaare\Dieukhiendongco\bin\Debug\Dieukhiendongco.pdb
+D:\nhut\dldkbmt\Bai_Tieu_Luan\solfwaare\Dieukhiendongco\obj\Debug\Dieukhiendongco.Properties.Resources.resources
+D:\nhut\dldkbmt\Bai_Tieu_Luan\solfwaare\Dieukhiendongco\obj\Debug\Dieukhiendongco.csproj.GenerateResource.cache
+D:\nhut\dldkbmt\Bai_Tieu_Luan\solfwaare\Dieukhiendongco\obj\Debug\Dieukhiendongco.csproj.CoreCompileInputs.cache
+D:\nhut\dldkbmt\Bai_Tieu_Luan\solfwaare\Dieukhiendongco\obj\Debug\Dieukhiendongco.exe
+D:\nhut\dldkbmt\Bai_Tieu_Luan\solfwaare\Dieukhiendongco\obj\Debug\Dieukhiendongco.pdb
+D:\nhut\dldkbmt\Bai_Tieu_Luan\solfwaare\Dieukhiendongco\obj\Debug\Dieukhiendongco.Form1.resources
+D:\nhut\dldkbmt\Bai_Tieu_Luan\solfwaare\Dieukhiendongco\obj\Debug\Dieukhiendongco.csproj.AssemblyReference.cache

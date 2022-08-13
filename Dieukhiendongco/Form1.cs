@@ -17,8 +17,10 @@ namespace Dieukhiendongco
     {
         int iteration;
         string speed;
+        bool isBusy = false;
+        bool isMotorStop = true; 
        
-        String data = null;
+        string data = null;
 
 
         public Form1()
@@ -37,20 +39,20 @@ namespace Dieukhiendongco
             timer1.Enabled = true;
 
 
-            //serialPort.DtrEnable = true;
+            serialPort.DtrEnable = true;
             ////khi arduino giao tiep qua USB, thi DTR phai duoc bat thi ham datareceived moi duoc goi.
 
-            //serialPort.Open();
+            serialPort.Open();
 
-            //if (serialPort.IsOpen)
-            //{
-            //    Console.WriteLine("Port is opened");
-            //}
+            if (serialPort.IsOpen)
+            {
+                Console.WriteLine("Port is opened");
+            }
 
-            //serialPort.DataReceived += SerialPort_DataReceived;
-            ////binding event
+            serialPort.DataReceived += SerialPort_DataReceived;
+            //binding event
 
-            //iteration = 300;
+            iteration = 300;
         }
 
         private void BackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
@@ -77,16 +79,43 @@ namespace Dieukhiendongco
 
                 var stream = client.GetStream();
 
-                int i;
-
-                // Loop to receive all the data sent by the client.
-                while ((i = stream.Read(bytes, 0, bytes.Length)) != 0)
+                using(var reader = new StreamReader(stream, Encoding.UTF8))
                 {
-                    // Translate data bytes to a ASCII string.
-                    data = Encoding.ASCII.GetString(bytes, 0, i);
-                    //Console.WriteLine("Received: {0}", data);
+                    
+                    while((data = reader.ReadLine()) != null)
+                    {
+                        switch (data)
+                        {
+                            case "Stop":
+                                if (isMotorStop)
+                                {
+                                    break;
+                                }
+
+                                serialPort.WriteLine("vs_stop");
+                                isMotorStop = true;
+
+                                break;
+                            case "Start":
+                                serialPort.WriteLine("vs_start");
+                                isMotorStop = false;
+
+                                break;
+                            default:
+
+                                Invoke(new Action(() =>
+                                {
+                                    SetSpeed.Text = data.Replace("motor_power", "");
+                                }));
+                                data = "vs_set_speed" + data.Replace("motor_power", "");
+                                serialPort.WriteLine(data);
+                                break;
+                        }
+                    }
 
                 }
+
+
 
             }
         }
@@ -111,12 +140,11 @@ namespace Dieukhiendongco
                 this.chart1.ChartAreas["ChartArea1"].AxisX.Minimum = iteration - 300;
             }));
 
-
         }
 
         private void send_Click(object sender, EventArgs e)
         {
-            serialPort.WriteLine("vs_set_speed" + SetSpeed.Text);//send set_speed to Arduino
+            //send set_speed to Arduino
 
 
             serialPort.WriteLine("vs_kp" + kP.Text);//send kP to Arduino   
@@ -127,7 +155,7 @@ namespace Dieukhiendongco
 
         private void Start_Click(object sender, EventArgs e)
         {
-            serialPort.WriteLine("vs_start");
+            serialPort.WriteLine("vs_stop");
         }
 
         private void Stop_Click(object sender, EventArgs e)
@@ -139,6 +167,7 @@ namespace Dieukhiendongco
 
         private void Form1_onClosing(object sender, FormClosingEventArgs e)
         {
+            serialPort.WriteLine("vs_stop");
             Console.WriteLine("CLosing serial port");
             serialPort.Close();
            
@@ -152,14 +181,9 @@ namespace Dieukhiendongco
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //data
-            if (data == null || data.Length == 0) 
-            {
-                return;
-            }
+            
+            
 
-
-            Console.WriteLine(data);
         }
     }
 }

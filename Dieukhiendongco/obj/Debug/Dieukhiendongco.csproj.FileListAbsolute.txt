@@ -19,3 +19,13 @@ C:\Users\khang\Desktop\Visual_Studio\Dieukhiendongco\obj\Debug\Dieukhiendongco.c
 C:\Users\khang\Desktop\Visual_Studio\Dieukhiendongco\obj\Debug\Dieukhiendongco.csproj.CoreCompileInputs.cache
 C:\Users\khang\Desktop\Visual_Studio\Dieukhiendongco\obj\Debug\Dieukhiendongco.exe
 C:\Users\khang\Desktop\Visual_Studio\Dieukhiendongco\obj\Debug\Dieukhiendongco.pdb
+C:\Users\skyho\Source\Repos\NhutAKKA\Visual_Studio\Dieukhiendongco\bin\Debug\Dieukhiendongco.exe.config
+C:\Users\skyho\Source\Repos\NhutAKKA\Visual_Studio\Dieukhiendongco\bin\Debug\Dieukhiendongco.exe
+C:\Users\skyho\Source\Repos\NhutAKKA\Visual_Studio\Dieukhiendongco\bin\Debug\Dieukhiendongco.pdb
+C:\Users\skyho\Source\Repos\NhutAKKA\Visual_Studio\Dieukhiendongco\obj\Debug\Dieukhiendongco.csproj.AssemblyReference.cache
+C:\Users\skyho\Source\Repos\NhutAKKA\Visual_Studio\Dieukhiendongco\obj\Debug\Dieukhiendongco.Form1.resources
+C:\Users\skyho\Source\Repos\NhutAKKA\Visual_Studio\Dieukhiendongco\obj\Debug\Dieukhiendongco.Properties.Resources.resources
+C:\Users\skyho\Source\Repos\NhutAKKA\Visual_Studio\Dieukhiendongco\obj\Debug\Dieukhiendongco.csproj.GenerateResource.cache
+C:\Users\skyho\Source\Repos\NhutAKKA\Visual_Studio\Dieukhiendongco\obj\Debug\Dieukhiendongco.csproj.CoreCompileInputs.cache
+C:\Users\skyho\Source\Repos\NhutAKKA\Visual_Studio\Dieukhiendongco\obj\Debug\Dieukhiendongco.exe
+C:\Users\skyho\Source\Repos\NhutAKKA\Visual_Studio\Dieukhiendongco\obj\Debug\Dieukhiendongco.pdb

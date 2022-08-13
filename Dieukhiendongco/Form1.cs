@@ -16,8 +16,16 @@ namespace Dieukhiendongco
     public partial class Form1 : Form
     {
         int iteration;
-        string cmd_read;
         string speed;
+        Int32 port = 8081;
+        IPAddress localAddr = IPAddress.Parse("127.0.0.1");
+        TcpListener server = null;
+        Byte[] bytes = new Byte[256];
+        String data = null;
+
+
+
+
         public Form1()
         {
             InitializeComponent();
@@ -25,71 +33,22 @@ namespace Dieukhiendongco
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            TcpListener server = null;
-            try
-            {
-                // Set the TcpListener on port 13000.
-                Int32 port = 8081;
-                IPAddress localAddr = IPAddress.Parse("127.0.0.1");
-
-                // TcpListener server = new TcpListener(port);
-                server = new TcpListener(localAddr, port);
-
-                // Start listening for client requests.
-                server.Start();
-
-                // Buffer for reading data
-                Byte[] bytes = new Byte[256];
-                String data = null;
-
-                // Enter the listening loop.
-                while (true)
-                {
-                    Console.Write("Waiting for a connection... ");
-
-                    // Perform a blocking call to accept requests.
-                    // You could also use server.AcceptSocket() here.
-                    TcpClient client = server.AcceptTcpClient();
-                    Console.WriteLine("Connected!");
-
-                    data = null;
-
-                    // Get a stream object for reading and writing
-                    NetworkStream stream = client.GetStream();
-
-                    int i;
-
-                    // Loop to receive all the data sent by the client.
-                    while ((i = stream.Read(bytes, 0, bytes.Length)) != 0)
-                    {
-                        // Translate data bytes to a ASCII string.
-                        data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
-                        Console.WriteLine("Received: {0}", data);
-
-                        // Process the data sent by the client.
 
 
-                        // Send back a response.
+            // Set the TcpListener on port 13000.
 
-                    }
 
-                    // Shutdown and end connection
-                    client.Close();
-                }
-            }
-            catch (SocketException ex)
-            {
-                Console.WriteLine("SocketException: {0}", ex);
-            }
-            finally
-            {
-                // Stop listening for new clients.
-                server.Stop();
-            }
 
-            Console.WriteLine("\nHit enter to continue...");
-            Console.Read();
+            // TcpListener server = new TcpListener(port);
+            server = new TcpListener(localAddr, port);
 
+            // Start listening for client requests.
+            server.Start();
+
+            // Buffer for reading data
+
+
+            timer1.Enabled = true;
 
 
             serialPort.DtrEnable = true;
@@ -158,11 +117,36 @@ namespace Dieukhiendongco
         {
             Console.WriteLine("CLosing serial port");
             serialPort.Close();
-            
+            server.Stop();
+
         }
 
         private void TCP_receive_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Console.WriteLine("Waiting for a connection... ");
+
+            //NetworkStream stream = client.GetStream();
+            //data = null;
+            //int i;
+            //while ((i = stream.Read(bytes, 0, bytes.Length)) != 0)
+            //{
+            // Translate data bytes to a ASCII string.
+            // data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
+            // Console.WriteLine("Received: {0}", data);
+
+            // Process the data sent by the client.
+
+
+            // Send back a response.
+            //}
+            //client.Close();
+
+
 
         }
     }

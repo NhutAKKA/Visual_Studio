@@ -8,3 +8,14 @@ D:\nhut\dldkbmt\Bai_Tieu_Luan\solfwaare\Dieukhiendongco\obj\Debug\Dieukhiendongc
 D:\nhut\dldkbmt\Bai_Tieu_Luan\solfwaare\Dieukhiendongco\obj\Debug\Dieukhiendongco.pdb
 D:\nhut\dldkbmt\Bai_Tieu_Luan\solfwaare\Dieukhiendongco\obj\Debug\Dieukhiendongco.Form1.resources
 D:\nhut\dldkbmt\Bai_Tieu_Luan\solfwaare\Dieukhiendongco\obj\Debug\Dieukhiendongco.csproj.AssemblyReference.cache
+C:\Users\khang\Desktop\Visual_Studio\Dieukhiendongco\bin\Debug\Dieukhiendongco.exe.config
+C:\Users\khang\Desktop\Visual_Studio\Dieukhiendongco\bin\Debug\Dieukhiendongco.exe
+C:\Users\khang\Desktop\Visual_Studio\Dieukhiendongco\bin\Debug\Dieukhiendongco.pdb
+C:\Users\khang\Desktop\Visual_Studio\Dieukhiendongco\obj\Debug\Dieukhiendongco.csproj.AssemblyReference.cache
+C:\Users\khang\Desktop\Visual_Studio\Dieukhiendongco\obj\Debug\Dieukhiendongco.csproj.SuggestedBindingRedirects.cache
+C:\Users\khang\Desktop\Visual_Studio\Dieukhiendongco\obj\Debug\Dieukhiendongco.Form1.resources
+C:\Users\khang\Desktop\Visual_Studio\Dieukhiendongco\obj\Debug\Dieukhiendongco.Properties.Resources.resources
+C:\Users\khang\Desktop\Visual_Studio\Dieukhiendongco\obj\Debug\Dieukhiendongco.csproj.GenerateResource.cache
+C:\Users\khang\Desktop\Visual_Studio\Dieukhiendongco\obj\Debug\Dieukhiendongco.csproj.CoreCompileInputs.cache
+C:\Users\khang\Desktop\Visual_Studio\Dieukhiendongco\obj\Debug\Dieukhiendongco.exe
+C:\Users\khang\Desktop\Visual_Studio\Dieukhiendongco\obj\Debug\Dieukhiendongco.pdb

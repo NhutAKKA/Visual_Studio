@@ -30,10 +30,7 @@ namespace Dieukhiendongco
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-            var backgroundWorker = new BackgroundWorker();
-            backgroundWorker.DoWork += BackgroundWorker_DoWork;
-            backgroundWorker.RunWorkerAsync();
+           
 
 
             timer1.Enabled = true;
@@ -48,6 +45,10 @@ namespace Dieukhiendongco
             {
                 Console.WriteLine("Port is opened");
             }
+            serialPort.WriteLine("vs_stop");
+            var backgroundWorker = new BackgroundWorker();
+            backgroundWorker.DoWork += BackgroundWorker_DoWork;
+            backgroundWorker.RunWorkerAsync();
 
             serialPort.DataReceived += SerialPort_DataReceived;
             //binding event
@@ -108,6 +109,7 @@ namespace Dieukhiendongco
                                     SetSpeed.Text = data.Replace("motor_power", "");
                                 }));
                                 data = "vs_set_speed" + data.Replace("motor_power", "");
+                                Console.WriteLine(data);
                                 serialPort.WriteLine(data);
                                 break;
                         }
@@ -153,17 +155,7 @@ namespace Dieukhiendongco
         }
 
 
-        private void Start_Click(object sender, EventArgs e)
-        {
-            serialPort.WriteLine("vs_stop");
-        }
-
-        private void Stop_Click(object sender, EventArgs e)
-        {
-            serialPort.WriteLine("vs_stop");
-        }
-
-
+ 
 
         private void Form1_onClosing(object sender, FormClosingEventArgs e)
         {
@@ -174,16 +166,6 @@ namespace Dieukhiendongco
 
         }
 
-        private void TCP_receive_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            
-            
-
-        }
     }
 }
